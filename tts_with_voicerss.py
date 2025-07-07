@@ -1,11 +1,14 @@
 import PyPDF2, requests, os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 VOICERSS_URL = "http://api.voicerss.org/"
 VOICERSS_API_KEY = os.environ.get("VOICERSS_API_KEY")
 
 print("Opening PDF...\n")
 ### EXTRACT PDF TEXT ###
-file = open("multipage_latin.pdf", mode="rb")
+file = open("./Text-Files/multipage_latin.pdf", mode="rb")
 
 pdf_reader = PyPDF2.PdfReader(file)
 

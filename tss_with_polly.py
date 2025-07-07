@@ -1,4 +1,7 @@
 import PyPDF2, boto3, os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY")
 AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_KEY")
@@ -7,7 +10,7 @@ AWS_S3_BUCKET = os.environ.get("AWS_BUCKET")
 
 print("Opening PDF...\n")
 ### EXTRACT PDF TEXT ###
-file = open("multipage_latin.pdf", mode="rb")
+file = open("./Text-Files/multipage_latin.pdf", mode="rb") # Tested with multiple PDF files in the Text-Files folder
 
 pdf_reader = PyPDF2.PdfReader(file)
 
